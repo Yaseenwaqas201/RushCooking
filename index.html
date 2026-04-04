@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cooking Utopia</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#3a0066,#6a0dad);
+    color:#fff;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+.hero{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.hero h1{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.hero p{
+    opacity:0.9;
+    font-size:1.1rem;
+}
+
+.hero-img{
+    width:100%;
+    max-width:420px;
+    border-radius:20px;
+    margin:25px auto;
+    display:block;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.buttons{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:20px;
+}
+
+.btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:16px;
+    border-radius:12px;
+    font-weight:600;
+    text-decoration:none;
+    color:white;
+    font-size:1rem;
+    transition:0.3s;
+}
+
+.btn:hover{transform:scale(1.05)}
+
+.amazon{background:#ff9900}
+.play{background:#34a853}
+
+.btn img{width:24px}
+
+.section{
+    margin-top:60px;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:15px;
+}
+
+.feature{
+    background:rgba(255,255,255,0.08);
+    padding:18px;
+    border-radius:14px;
+    backdrop-filter:blur(5px);
+}
+
+.screenshots{
+    display:flex;
+    gap:15px;
+    overflow-x:auto;
+    padding-bottom:10px;
+}
+
+.screenshots img{
+    width:220px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.reviews{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:15px;
+}
+
+.review{
+    background:rgba(255,255,255,0.08);
+    padding:15px;
+    border-radius:12px;
+    font-size:0.9rem;
+}
+
+.footer{
+    text-align:center;
+    margin-top:60px;
+    opacity:0.7;
+    font-size:0.9rem;
+}
+
+@media(min-width:768px){
+    .hero h1{font-size:3rem}
+
+    .buttons{
+        flex-direction:row;
+        justify-content:center;
+    }
+
+    .features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .reviews{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>🍳 Cooking Utopia</h1>
+        <p><strong>Cook Fast • Serve Smart • Build Your Dream Restaurant</strong></p>
+
+        <img class="hero-img" src="https://via.placeholder.com/420x300" alt="Game Screenshot">
+
+        <div class="buttons">
+            <a class="btn amazon" href="https://www.amazon.com/gp/mas/dl/android?p=com.cookingutopia.foodgame.adventure">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/amazon.png"/>
+                Get it on Amazon
+            </a>
+
+            <a class="btn play" href="#">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/google-play.png"/>
+                Download on Play Store
+            </a>
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="section">
+        <h2>🔥 Why You'll Love It</h2>
+        <div class="features">
+            <div class="feature">🍔 Cook dishes from around the world</div>
+            <div class="feature">⏱️ Fast-paced addictive gameplay</div>
+            <div class="feature">🏨 Build your restaurant empire</div>
+            <div class="feature">🎯 Hundreds of challenging levels</div>
+        </div>
+    </div>
+
+    <!-- SCREENSHOTS -->
+    <div class="section">
+        <h2>📸 Gameplay Preview</h2>
+        <div class="screenshots">
+            <img src="https://via.placeholder.com/200x350">
+            <img src="https://via.placeholder.com/200x350">
+            <img src="https://via.placeholder.com/200x350">
+        </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="section">
+        <h2>⭐ Player Reviews</h2>
+        <div class="reviews">
+            <div class="review">⭐⭐⭐⭐⭐<br>"Super addictive cooking game!"</div>
+            <div class="review">⭐⭐⭐⭐⭐<br>"Best time management game ever!"</div>
+            <div class="review">⭐⭐⭐⭐⭐<br>"Love the levels and design!"</div>
+        </div>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div class="section" style="text-align:center">
+        <h2>🚀 Start Your Cooking Journey Today!</h2>
+        <div class="buttons">
+            <a class="btn amazon" href="https://www.amazon.com/gp/mas/dl/android?p=com.cookingutopia.foodgame.adventure">Amazon Store</a>
+            <a class="btn play" href="#">Play Store</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 Cooking Utopia • All Rights Reserved
+    </div>
+
+</div>
+
+</body>
+</html>
