@@ -14,17 +14,18 @@ body{
     font-family:'Poppins',sans-serif;
     background:linear-gradient(135deg,#3a0066,#6a0dad);
     color:#fff;
+    -webkit-tap-highlight-color: transparent;
 }
 .container{max-width:1100px;margin:auto;padding:20px}
 .hero{text-align:center;padding:40px 20px}
 
-/* New CSS for Title and Icon */
+/* Title and Icon */
 .header-title {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap; /* Helps on very small screens */
+    flex-wrap: wrap; 
     margin-bottom: 10px;
 }
 .game-icon {
@@ -39,14 +40,11 @@ body{
 }
 
 .hero-img{width:100%;max-width:420px;border-radius:20px;margin:25px auto;display:block}
-.buttons{display:flex;flex-direction:column;gap:15px;margin-top:20px}
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;border-radius:12px;font-weight:600;text-decoration:none;color:white}
-.amazon{background:#ff9900}
-.play{background:#34a853}
-.btn img{width:24px}
+
 .section{margin-top:60px}
 .features{display:grid;gap:15px}
 .feature{background:rgba(255,255,255,0.08);padding:18px;border-radius:14px}
+
 /* --- Universal Buttons Style --- */
 .download-buttons {
     display: flex;
@@ -69,7 +67,7 @@ body{
     text-decoration: none;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    text-align: left; /* Keeps text aligned properly */
+    text-align: left; 
 }
 
 .download-btn:active {
@@ -78,12 +76,11 @@ body{
 }
 
 .download-btn img {
-    width: 35px; /* Slightly larger icon to match the badge style */
+    width: 35px; 
     height: auto; 
     object-fit: contain;
 }
 
-/* Badge Text Styling */
 .btn-text {
     display: flex;
     flex-direction: column;
@@ -101,38 +98,56 @@ body{
     font-weight: 600;
 }
 
-/* --- Specific Button Colors --- */
-/* Amazon: White background, Black text */
 .download-btn.amazon {
     background: #ffffff; 
     color: #000000; 
     border: 1px solid #cccccc;
 }
 
-/* Play Store: Black background, White text */
 .download-btn.play {
     background: #000000; 
     color: #ffffff; 
     border: 1px solid #333333;
 }
 
-/* Auto slider updated for more images */
-.slider{overflow:hidden;position:relative}
-.slide-track{
-    display:flex;
-    /* Increased time to 30s so it doesn't move too fast with more images */
-    animation:scroll 30s linear infinite; 
+/* --- Smart Interactive Gallery --- */
+.slider {
+    width: 100%;
+    position: relative;
 }
-.slide-track img{width:220px;margin-right:15px;border-radius:12px}
-@keyframes scroll{
-    0%{transform:translateX(0)}
-    100%{transform:translateX(-50%)}
+
+.slide-track {
+    display: flex;
+    overflow-x: auto; 
+    gap: 15px;
+    padding-bottom: 15px; 
+    /* Smooth native scrolling for mobile */
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+    cursor: grab; /* Shows a grab icon for desktop users */
+}
+
+.slide-track:active {
+    cursor: grabbing;
+}
+
+.slide-track::-webkit-scrollbar {
+    display: none;
+}
+
+.slide-track img {
+    width: 220px;
+    height: auto;
+    flex-shrink: 0; 
+    border-radius: 12px;
+    /* Prevent default image dragging behavior so the whole track drags */
+    pointer-events: none; 
 }
 
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 ratio */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
     border-radius: 15px;
@@ -149,7 +164,7 @@ body{
 @media(min-width:768px){
     .hero h1{font-size:3rem}
     .game-icon {width: 100px; height: 100px;}
-    .buttons{flex-direction:row;justify-content:center}
+    .download-buttons{flex-direction:row;justify-content:center}
     .features{grid-template-columns:1fr 1fr}
 }
 </style>
@@ -169,22 +184,23 @@ body{
 
     <img class="hero-img" src="FeatureImage.png" alt="Game Feature Image" onerror="this.src='https://placehold.co/420x236/27272a/ffffff?text=Feature+Image'">
 
-<div class="download-buttons">
-    <a class="download-btn amazon" href="https://www.amazon.com/gp/mas/dl/android?p=com.cookingutopia.foodgame.adventure">
-        <img src="amazonIcon.png" alt="Amazon Logo">
-        <div class="btn-text">
-            <span class="small-text">GET IT ON</span>
-            <span class="large-text">Amazon Store</span>
-        </div>
-    </a>
+    <div class="download-buttons">
+        <a class="download-btn amazon" href="https://www.amazon.com/gp/mas/dl/android?p=com.cookingutopia.foodgame.adventure">
+            <img src="amazonIcon.png" alt="Amazon Logo">
+            <div class="btn-text">
+                <span class="small-text">GET IT ON</span>
+                <span class="large-text">Amazon Store</span>
+            </div>
+        </a>
 
-    <a class="download-btn play" href="https://play.google.com/store/apps/details?id=com.CookingUtopia.Canteen.Kitchen.MadnessChef.Craze.Fever">
-        <img src="playstoreIcon.png" alt="Google Play Logo">
-        <div class="btn-text">
-            <span class="small-text">GET IT ON</span>
-            <span class="large-text">Google Play</span>
-        </div>
-    </a>
+        <a class="download-btn play" href="https://play.google.com/store/apps/details?id=com.CookingUtopia.Canteen.Kitchen.MadnessChef.Craze.Fever">
+            <img src="playstoreIcon.png" alt="Google Play Logo">
+            <div class="btn-text">
+                <span class="small-text">GET IT ON</span>
+                <span class="large-text">Google Play</span>
+            </div>
+        </a>
+    </div>
 </div>
 
 <div class="section">
@@ -200,7 +216,7 @@ body{
 <div class="section">
     <h2>📸 Gameplay</h2>
     <div class="slider">
-        <div class="slide-track">
+        <div class="slide-track" id="gallery-track">
             <img src="ScreenShot1.png" alt="Screenshot 1">
             <img src="ScreenShot2.png" alt="Screenshot 2">
             <img src="ScreenShot3.png" alt="Screenshot 3">
@@ -208,7 +224,6 @@ body{
             <img src="ScreenShot5.png" alt="Screenshot 5">
             <img src="ScreenShot6.png" alt="Screenshot 6">
             <img src="ScreenShot7.png" alt="Screenshot 7">
-            
             <img src="ScreenShot1.png" alt="Screenshot 1">
             <img src="ScreenShot2.png" alt="Screenshot 2">
             <img src="ScreenShot3.png" alt="Screenshot 3">
@@ -235,12 +250,91 @@ body{
 
 <div class="section" style="text-align:center">
     <h2>🚀 Download Now</h2>
-    <div class="buttons">
-        <a class="btn amazon" href="https://www.amazon.com/gp/mas/dl/android?p=com.cookingutopia.foodgame.adventure">Amazon</a>
-        <a class="btn play" href="https://play.google.com/store/apps/details?id=com.CookingUtopia.Canteen.Kitchen.MadnessChef.Craze.Fever">Play Store</a>
+    <div class="download-buttons">
+        <a class="download-btn amazon" href="https://www.amazon.com/gp/mas/dl/android?p=com.cookingutopia.foodgame.adventure">
+            <img src="amazonIcon.png" alt="Amazon Logo">
+            <div class="btn-text">
+                <span class="small-text">GET IT ON</span>
+                <span class="large-text">Amazon Store</span>
+            </div>
+        </a>
+
+        <a class="download-btn play" href="https://play.google.com/store/apps/details?id=com.CookingUtopia.Canteen.Kitchen.MadnessChef.Craze.Fever">
+            <img src="playstoreIcon.png" alt="Google Play Logo">
+            <div class="btn-text">
+                <span class="small-text">GET IT ON</span>
+                <span class="large-text">Google Play</span>
+            </div>
+        </a>
     </div>
 </div>
 
 </div>
+
+<script>
+    const track = document.getElementById('gallery-track');
+    
+    // Variables for Auto-Scroll
+    let isPaused = false;
+    let scrollSpeed = 1; // Increase this number to scroll faster
+    
+    // Variables for Mouse Click & Drag
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    // 1. The Auto-Scroll Function
+    function autoScroll() {
+        if (!isPaused && !isDown) {
+            track.scrollLeft += scrollSpeed;
+            
+            // Infinite loop logic: If we've scrolled past half the content (the first set of 7 images),
+            // seamlessly jump back to the exact same position in the first set.
+            if (track.scrollLeft >= track.scrollWidth / 2) {
+                track.scrollLeft = 0;
+            }
+        }
+        requestAnimationFrame(autoScroll);
+    }
+    
+    // Start auto-scroll
+    autoScroll();
+
+    // 2. Pause on Touch (Mobile) or Hover (Desktop)
+    track.addEventListener('touchstart', () => isPaused = true);
+    track.addEventListener('touchend', () => {
+        // Wait 1.5 seconds after they let go before resuming auto-scroll
+        setTimeout(() => isPaused = false, 1500); 
+    });
+    track.addEventListener('mouseenter', () => isPaused = true);
+    track.addEventListener('mouseleave', () => isPaused = false);
+
+    // 3. Mouse Click & Drag Logic (For Desktop Users)
+    track.addEventListener('mousedown', (e) => {
+        isDown = true;
+        isPaused = true;
+        startX = e.pageX - track.offsetLeft;
+        scrollLeft = track.scrollLeft;
+    });
+    
+    track.addEventListener('mouseleave', () => {
+        isDown = false;
+        isPaused = false;
+    });
+    
+    track.addEventListener('mouseup', () => {
+        isDown = false;
+        setTimeout(() => isPaused = false, 1500); // Resume after let go
+    });
+    
+    track.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - track.offsetLeft;
+        const walk = (x - startX) * 2; // The * 2 makes it scroll a bit faster when dragging
+        track.scrollLeft = scrollLeft - walk;
+    });
+</script>
+
 </body>
 </html>
