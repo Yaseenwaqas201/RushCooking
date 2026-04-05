@@ -47,6 +47,74 @@ body{
 .section{margin-top:60px}
 .features{display:grid;gap:15px}
 .feature{background:rgba(255,255,255,0.08);padding:18px;border-radius:14px}
+/* --- Universal Buttons Style --- */
+.download-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-align: left; /* Keeps text aligned properly */
+}
+
+.download-btn:active {
+    transform: scale(0.96); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.download-btn img {
+    width: 35px; /* Slightly larger icon to match the badge style */
+    height: auto; 
+    object-fit: contain;
+}
+
+/* Badge Text Styling */
+.btn-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.small-text {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.large-text {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* --- Specific Button Colors --- */
+/* Amazon: White background, Black text */
+.download-btn.amazon {
+    background: #ffffff; 
+    color: #000000; 
+    border: 1px solid #cccccc;
+}
+
+/* Play Store: Black background, White text */
+.download-btn.play {
+    background: #000000; 
+    color: #ffffff; 
+    border: 1px solid #333333;
+}
 
 /* Auto slider updated for more images */
 .slider{overflow:hidden;position:relative}
@@ -101,15 +169,22 @@ body{
 
     <img class="hero-img" src="FeatureImage.png" alt="Game Feature Image" onerror="this.src='https://placehold.co/420x236/27272a/ffffff?text=Feature+Image'">
 
-    <div class="buttons">
-        <a class="btn amazon" href="https://www.amazon.com/gp/mas/dl/android?p=com.cookingutopia.foodgame.adventure">
-            <img src="amazonIcon.png" alt="Amazon"> Amazon Store
-        </a>
+<div class="download-buttons">
+    <a class="download-btn amazon" href="https://www.amazon.com/gp/mas/dl/android?p=com.cookingutopia.foodgame.adventure">
+        <img src="amazonIcon.png" alt="Amazon Logo">
+        <div class="btn-text">
+            <span class="small-text">GET IT ON</span>
+            <span class="large-text">Amazon Store</span>
+        </div>
+    </a>
 
-        <a class="btn play" href="https://play.google.com/store/apps/details?id=com.CookingUtopia.Canteen.Kitchen.MadnessChef.Craze.Fever">
-            <img src="playstoreIcon.png" alt="Play Store"> Play Store
-        </a>
-    </div>
+    <a class="download-btn play" href="https://play.google.com/store/apps/details?id=com.CookingUtopia.Canteen.Kitchen.MadnessChef.Craze.Fever">
+        <img src="playstoreIcon.png" alt="Google Play Logo">
+        <div class="btn-text">
+            <span class="small-text">GET IT ON</span>
+            <span class="large-text">Google Play</span>
+        </div>
+    </a>
 </div>
 
 <div class="section">
